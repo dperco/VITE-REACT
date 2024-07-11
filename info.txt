@@ -1,0 +1,612 @@
+CLASE 1 ------------------------------------------
+
+Metodos de arrays : en general - .map , .filter , .find
+Destructuring 
+Rest/Spread operator (...)
+Arrow functions
+Modulos
+
+
+
+CLASE 2 ------------------------------------------
+
+1) Instalacion de Node.js
+2) Verificar versiones de node.js y NPM (superior a 18.x y 8.x respectivamente)
+3) Instalacion del entorno : Vite.js
+
+webpack + babel
+
+
+Need to install the following packages:
+create-vite@5.2.3
+
+Correr a ejecutar la app
+
+Node.js : Entorno de ejecucion de Javascript
+
+
+
+pwd : nos muestra la ruta actual
+
+
+> npm create vite@latest : crea un proyecto de vite, es decir, nos crea una carpeta con archivos en el sistema operativo
+> cd nombreCarpeta : nos movemos a la carpeta creada
+> npm install : instala las dependencias del proyecto
+> npm run dev : corre el proyecto en modo desarrollo
+
+
+
+CLASE 3 ------------------------------------------
+
+JSX
+
+JSX es una extension de la sintaxis de JavaScript que nos permite escribir HTML en JavaScript de manera mas sencilla y legible y que luego es transformado a JavaScript puro mediante Babel.
+
+< App />
+
+
+
+CLASE 4 ------------------------------------------
+
+Props : son los parametros que se le pasan a un componente. Por default son de solo lectura y no se pueden modificar y viene predefinido como un objeto. 
+
+
+Estados de un componente : Queda pendiente y se ve la clase que viene
+
+imagenes
+
+css frameworks
+
+- bootstrap : https://getbootstrap.com/  | https://react-bootstrap.github.io/
+- tailwind (*) : https://tailwindcss.com/
+https://tailwindcss.com/docs/guides/vite
+- Material UI : https://mui.com/
+- Ant Design : https://ant.design/
+
+
+
+AFTER 1 ------------------------------------------
+
+Common Command Line Commands
+
+cd : change directory - Cambia el directorio actual
+ls : list - Muestra los archivos y carpetas en el directorio actual
+pwd : print working directory - Muestra la ruta del directorio actual
+touch : crea un archivo
+mkdir : crea una carpeta
+rm : remove - Elimina un archivo
+rm -r : remove recursively - Elimina una carpeta
+code . : abre Visual Studio Code en el directorio actual
+
+
+git init : inicializa un repositorio de git - crea una carpeta llamada .git en el directorio actual
+
+git status : muestra el estado de los archivos en el repositorio de git
+
+git clone
+git add
+git commit
+git push
+
+
+CLASE 5 ------------------------------------------
+
+Tailwind extensiones : 
+
+https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek
+https://marketplace.visualstudio.com/items?itemName=heybourn.headwind
+https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+
+
+Hooks : es una funcion que nos permite agregar funcionalidades a un componente. Siempre se ejecutan dentro de un componente y no se pueden ejecutar en un condicional o un loop.
+
+- useState : nos permite agregar estados a un componente
+- useEffect : nos permite agregar efectos secundarios a un componente
+- useRef
+- useContext
+
+Destructuring 
+
+const nombres = ['Juan', 'Pedro', 'Maria'];
+
+const juan = nombres[0];
+const pedro = nombres[1];
+const maria = nombres[2];
+
+const [juan,pedro,maria] = nombres
+
+
+const [var1,var2,...varN] = elArrayOriginal
+
+
+
+
+
+EJEMPLO 1 : 
+
+import { useState } from "react"
+
+
+function Button(props) {
+  //estados
+  /*
+  const arrayDeValores = useState("valor inicial")
+  const miEstado = arrayDeValores[0]//Esta es la variable reactiva o el "estado"
+  const setMiEstado = arrayDeValores[1]//Esta es la función que modifica el estado 
+  */
+  const [miEstado, setMiEstado] = useState("valor inicial")
+
+  //arrayDeValores[0] = "nuevo valor"
+  
+  /* const valores2 = useState(0)
+  
+  console.log(valores1)
+  console.log(valores2) */
+
+
+  //acciones
+  const hacerClick = () => {
+    console.log("click")
+    //miEstado = 'nuevo valor'
+    setMiEstado("nuevo valor")
+  }
+  
+
+  //vista
+  return (
+    <button className="btn" onClick={hacerClick}>{miEstado}</button>
+  )
+}
+
+export default Button
+
+
+
+
+
+EJEMPLO 2
+
+
+import { useState } from "react"
+
+function Button() {
+  //Estado
+  const [contador,setContador] = useState(0)
+
+  //Acciones
+  const hacerClick = () => {
+    console.log("Click")
+    //contador++
+    //contador = contador + 1
+    //contador += 1
+    //console.log(contador)
+    //setContador(contador++)
+    setContador(contador + 1)
+  }
+
+  //Vista
+  return (
+    <div>
+      <button onClick={hacerClick} className="btn">click</button>
+      <p>Contador : {contador}</p>
+    </div>
+  )
+}
+export default Button
+
+
+
+
+
+CLASE 6 ------------------------------------------
+
+Tipos de componentes : 
+
+- Estructurales 
+- Reutilizables
+- Contenedores -> Presentacionales
+- Providers
+
+Container Design Pattern : es un patron de diseño que nos permite separar la logica de negocio de la logica de presentacion.
+
+
+API
+
+API WEB - API REST
+
+
+https://github.com/public-apis/public-apis
+https://randomfox.ca/floof/
+
+
+https://fakestoreapi.com/docs 
+https://dummyjson.com/docs/products#products-all
+https://www.themealdb.com/api.php
+
+
+
+CLASE 7 ------------------------------------------
+
+MVC : Modelo, Vista, Controlador 
+
+Reejecucion de un componente : 
+
+1) Cada vez que un estado cambia
+2) Cada vez que cambian los props
+3) Cada vez que un componente padre se re-renderiza
+
+
+const nombres = ['Juan', 'Pedro', 'Maria'];
+
+const r = nombres.forEach((item,index)=>{
+
+})
+
+const r = nombres.map((item,index)=>{
+  return "horacio" + index
+})
+//[horacio0,horacio1,horacio2]
+
+
+nombres.filter((item,index)=>{})
+nombres.find((item,index)=>{})
+nombres.reduce(()=>{})
+nombres.sort(()=>{})
+
+
+AFTER 2 ------------------------------------------
+
+https://tailblocks.cc/
+https://mambaui.com/components/profile
+https://marketplace.visualstudio.com/items?itemName=alfredbirk.tailwind-documentation
+https://magicui.design/docs/components/dot-pattern
+https://ui.aceternity.com/
+https://ui.shadcn.com/
+https://javascript.info/fetch-api
+
+Fetch => Api WEB
+fetch() => Function
+
+Promise => Api WEB
+promise => Object
+
+HTTP => HyperText Transfer Protocol
+
+
+Request(Cliente)
+
+URL/IP - METODO(GET/POST/PUT/DELETE)
+HEADERS - BODY
+
+
+Response(Servidor)
+
+CODIGO - MENSAJE
+
+1xx - Información
+2xx - Aceptado
+3xx - Redireccionado
+4xx - Error de cliente
+    401 - Unauthorized
+    403 - Forbidden
+    404 - Not Found
+    405 - Method Not Allowed
+
+5xx - Error de servidor
+    500 - Internal Server Error
+    502 - Bad Gateway
+    503 - Service Unavailable
+    504 - Gateway Timeout
+
+    HEADERS - BODY
+
+
+fetch("https://dummyjson.com/products")
+.then((res)=>{
+
+  res.status//200
+  res.ok //true
+  res.headers //{...}
+  res.body
+  
+  res.text()
+  res.formData()
+  res.arrayBuffer()
+  res.blob()
+
+  return res.json()
+})
+.then((res)=>{
+  console.log(res)
+})
+.catch((err)=>{
+  
+})
+
+
+
+CLASE 8 --------------------------------------------------------------------
+
+Hooks : hacer hooks customizados
+Children : otra manera de pasar props
+Evento de teclado (pendiente) - evento de resize
+Patrones : HoC
+
+
+  //useEffect(() => {}) : se ejecuta una vez y cada vez que el componente recargue
+  //useEffect(() => {},[]) : se ejecuta una vez sola
+  //useEffect(() => {},[x,y]) : se ejecuta una vez al principio y cuando cambia el valor de x o y
+  //useEffect(() => { return ()=>{} },[])
+
+
+CLASE 9 --------------------------------------------------------------------
+
+Routing
+
+react-router-dom
+
+SPA : Single Page Application
+
+
+Enrutador : Envuelve toda la aplicacion dandole capacidades especiales, especificamente la navegacion 
+
+
+
+{/* <h2 className="mb-6 text-3xl font-bold">Home</h2>
+      <p className="mb-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere natus esse numquam nihil dignissimos eligendi, vel saepe pariatur aut voluptatum, ut excepturi eius doloremque exercitationem dolores cumque? Odit, saepe tempore?</p>
+      <ProductosContainer /> */}
+
+
+
+
+  SEGUNDA PRE ENTREGA : 
+
+  Componentes : 
+
+    - App 
+      |- NavBar
+      |  |- CartWidget
+      |- Routes
+        |
+        |- Route(/)
+        |  |- ItemListContainer
+        |  |  |- ItemList
+        |  |    |- Item
+        |
+        |- Route(/category/:id)
+        |  |- ItemListContainer
+        |
+        |- Route(/item/:id)
+        |  |- ItemDetailContainer
+        |       |- ItemDetail
+        |       |- ItemCount (*opcional*)
+
+
+  RUTAS a configurar : 
+
+  / => ItemListContainer
+  /category/:id => ItemListContainer
+  /item/:id => ItemDetailContainer
+
+
+CLASE 10 --------------------------------------------------------------------
+
+Eventos :
+State Uplifting : Es como lo opuesto a los props o "Como pasarle datos de un componente hijo a un componente padre"
+
+
+1- El componente padre tiene que tener una funcion en su interior
+2- El componente padre tiene que tener un estado donde se reciba la informacion del componente hijo
+3- Le tengo que pasar la funcion a la componente hijo
+4- Recibo esa funcion como prop en el componente hijo
+5- Ejecuto la funcion que recibo en el componente hijo dentro de un evento; le puedo pasar parametros, los cuales se van a recibir en la funcion del paso 1
+6- Los valores recibidos se almacenan en el estado del componente padre
+
+
+// Element.addEventListener('evento',callback)
+// <Element onEvento={callback}>
+/* 
+
+El Objeto Evento : Es como un objeto "Global"
+
+PROPAGACION DE EVENTOS : 
+
+Bubbling : El evento se propaga desde el elemento hijo hasta el padre 
+
+*/
+
+import { useRef, useState } from "react"
+import validator from "validator"
+
+function Carrito() {
+
+  const [error, setError] = useState(false)
+  const [message, setMessage] = useState("")
+  const ref = useRef(null)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(e)
+    console.log("Submit")
+  }
+
+  const handleChange = (e) => {
+    console.log("Change")
+    /* 
+    input.value 
+    */
+    const input = document.querySelector("input")
+    console.log(input.value)
+    console.log(e.target.value)
+  }
+
+  const handleKeyDown = (e) => {
+    console.log(e.key)
+    //if (e.key === "1") {
+    //validator.isNumeric() => true | false
+    if (validator.isNumeric(e.key)) {
+      e.preventDefault()
+      setError(true)
+      setMessage("No se puede usar el número 1")
+    } else {
+      setError(false)
+    }
+    console.log("KeyDown")
+  }
+
+  const handleInput = () => {
+    console.log("Input")
+  }
+
+  const handleKeyUp = () => {
+    console.log("KeyUp")
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log(e.currentTarget)
+    console.log("Click button")
+  }
+
+  const handleClickDiv = (e) => {
+    console.log(e.currentTarget)
+    console.log("ClickDiv")
+  }
+
+  const handleEmailChange = () => {
+    console.log(ref.current)
+    console.log(ref.current.value)
+  }
+
+  /* 
+  
+
+  OPERADOR TERNARIO : Es una especie de condicional if/else
+  
+
+  const resultado  = if() {} else {}   => Esto es sintacticamente incorrecto
+
+  if(error) { return "Hubo un error" } else { return "No hubo error" }
+
+  error ? "Hubo un error" : "No hubo error"
+  
+  */
+
+  return (
+    <div onClick={handleClickDiv}>
+      <h2>Carrito</h2>
+      <p>No tenes productos en tu carrito</p>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Nombre</label>
+          {error ? <p className="text-sm font-bold text-red-500">Hubo un error</p> : null}
+          <input
+            type="text"
+            name="nombre"
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onInput={handleInput}
+            onKeyUp={handleKeyUp}
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" ref={ref} onChange={handleEmailChange}/>
+        </div>
+        <button onClick={handleClick}>Enviar</button>
+      </form>
+    </div>
+  )
+}
+export default Carrito
+
+
+CLASE 11 --------------------------------------------------------------------
+
+Context API : Es una API que nos permite acceder a los datos de un componente desde multiples componentes hijos sin la necesidad de pasar por props, es decir, componentes intermedios.
+
+
+Darle valor al contexto : 
+
+<Provider value={valorDelContexto}>
+
+</Provider>
+
+
+
+
+Consumir el contexto :
+
+useContext(miContexto)
+
+
+
+<Componente propName="propValue" />
+
+
+<Componente>
+  soy un prop
+</Componente>
+
+
+
+Paso a paso : 
+
+0) creo un archivo nuevo para el desarrollo de mi contexto
+1) importo la funcion createContext
+2) crear el contexto ej : const miContexto = createContext()
+3) se saca el provider ej : const Provider = miContexto.Provider
+4) me creo un componente propio 
+5) Uso el provider del paso 3 en el componente propio del paso 4
+6) Al provider del paso 3 le configuro el prop "value", que va a ser el valor del contexto(osea lo global)
+7) Uso mi componente propio del paso 4 en la aplicacion principal envolviendo todos los otros componentes
+8) Integrar el valor del contexto/provider del componente del paso 4 con algun tipo de estado, esto asegura que todos los componentes que usen el contexto/provider hagan er-render
+9) ir hasta cualquier otro componente y usar el contexto con la formula : 
+
+  const miContexto = useContext(miContexto)
+
+
+CLASE 12 -----------------------------------------------------------
+
+//sea de su agrado mostrarme el contenido de dicho alimento cuya jerga a de llamarse "churrasco"
+
+https://www.npmjs.com/package/tailwind-merge
+
+
+CLASE 13 -----------------------------------------------------------
+
+Firebase : es una plataforma de google que nos permite usar distintos servicios de google sin tener que pagar por ellos, como almacenamiento, base de datos, autenticacion, hosting, etc.
+
+Proyecto de firebase : necesario para poder usar los servicios de firebase
+
+Bases de datos : 
+
+
+Relacional (SQL/SQLite/PostgreSQL/MySQL/Oracle/SQL Server/etc)
+Base de datos : Seria todo el servidor
+Tablas : Son divisiones internas de la base de datos
+Columnas : Son los campos de la tabla
+Registros : Son los datos de la tabla, cada una de las filas
+
+
+NoRelacional (MongoDB/Firestore/Cassandra/CouchDB/dynamoDB/etc)
+Base de datos : Seria todo el servidor
+Colecciones : Son divisiones internas de la base de datos (simil array)
+Propiedades : Son los campos de la coleccion (simil columnas)
+Documentos : Es cada cosa guardada en la coleccion (simil objeto)
+
+Vectoriales
+Grafos
+
+
+Paso a paso de implementacion de firebase : 
+
+1) Obtengo las credenciales de firebase
+2) Creo un archivo llamado firebaseConfig.js
+3) Importo la funcion initializeApp de firebase
+4) Creo un objeto con las credenciales
+5) Le paso el objeto a la funcion initializeApp y obtengo en una variable la aplicacion ya conectada
+
+6) Usando la aplicacion que obtengo en el paso 5, le "extraigo" la base de datos con el metodo getFirestore
+7) De la base de datos que obtuve en el paso 6, le "extraigo" la coleccion con el metodo collection
